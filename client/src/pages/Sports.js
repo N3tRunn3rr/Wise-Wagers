@@ -93,7 +93,7 @@ const SportsBetting = () => {
       profileButton.textContent = "Go to Finance Profile";
       profileButton.classList.add("profileButton");
       profileButton.addEventListener("click", () => {
-        navigate("/profile");
+        navigate("/finance");
       });
       const betCard = document.querySelector("#predictorCard");
       betCard.innerHTML = "";

@@ -21,6 +21,7 @@ code {
   height: 100vh;
   background-size: cover;
   border-style: none;
+  background-image: url(../public/background.avif);
 }
 
 
@@ -43,14 +44,14 @@ code {
   font-weight: bold;
   margin-bottom: 20px;
   color: black;
-  background-color: black;
+  /* background-color: black; */
 }
 
 .description {
   font-size: 24px;
   margin-bottom: 40px;
   color: black;
-  background-color: black;
+  /* background-color: black; */
 }
 
 .signup-btn {
@@ -427,4 +428,94 @@ table tbody tr:nth-child(even) {
   height: 50px;
   border-radius: 5px;
   font-weight: bold;
+}
+
+/* Sports page CSS */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+}
+
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#predictorCard {
+  border: 1px solid black;
+  padding: 20px;
+  border-radius: 10px;
+  width: 70%;
+  margin: 20px;
+}
+
+.customBetButton,
+.currentOddsButton,
+.customBetSubmitButton {
+  background-color: #1a73e8;
+  border: none;
+  color: #fff;
+  padding: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  width: 100%;
+}
+
+.customBetButton:hover,
+.currentOddsButton:hover,
+.customBetSubmitButton:hover {
+  background-color: #0e59c5;
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+input[type="date"],
+input[type="number"],
+input[type="text"],
+select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+}
+
+select {
+  cursor: pointer;
+}
+
+.card-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+}
+
+.card-item h3 {
+  margin-top: 0;
+  font-size: 18px;
+}
+
+.card-item p {
+  margin-bottom: 0;
+  font-size: 16px;
 }
