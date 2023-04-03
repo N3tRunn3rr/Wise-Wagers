@@ -1,0 +1,243 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Home CSS */
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.main-content {
+  width: 100%;
+  display: flex;
+  height: 600px;
+  margin-top: -250px;
+}
+
+.box {
+  flex: 1;
+  padding: 20px;
+  border: 1px solid black;
+  margin: 10px;
+
+}
+
+.title {
+  font-size: 48px;
+  font-weight: bold;
+  margin-bottom: 20px;
+  color: #1c2237;
+}
+
+.description {
+  font-size: 24px;
+  margin-bottom: 40px;
+  color: #58616f;
+}
+
+.signup-btn {
+  background-color: #0984e3;
+  color: #fff;
+  font-size: 18px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.signup-btn:hover {
+  background-color: #74b9ff;
+}
+
+/* Navbar CSS */
+nav {
+  background-color: #0984e3;
+  height: 75px; /* reduce the height of the navbar */
+  width: 100%; /* make the width of the navbar 100% of the page */
+  position: fixed; /* make the navbar fixed so that it stays on top */
+  top: 0;
+  z-index: 3;
+  
+}
+
+a.home-link, a.login-link, a.contact-link {
+  color: black;
+
+}
+
+
+nav {
+  display: block;
+  text-align: center;
+  position: relative; /* change the position to relative */
+  margin: 0 auto; /* center the navbar horizontally */
+  max-width: 100%; /* add a max-width to the navbar */
+  height: 90px;
+}
+
+nav a {
+  font-size: 22px;
+  color: #4d4d4e;
+  display: inline-block; /* change display to inline-block */
+  line-height: 90px; /* change line-height to match the height of the navbar */
+  padding: 0 20px; 
+  position: relative;
+  left: 450px;
+}
+
+nav a i {
+  transition: none;
+}
+
+a:hover {
+  color: rgb(221, 221, 212);
+}
+
+
+nav a:hover:after {
+  opacity: 1;
+}
+
+
+/* Sign up CSS */
+.sign-up {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200px;
+  height: 500px;
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  
+}
+
+.form-inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+label {
+  margin-top: 20px;
+}
+
+input {
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 100%;
+  max-width: 400px;
+  margin-top: 5px;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #3f51b5;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+}
+
+/* Contact Info CSS */
+.contact-container {
+  background-color: white;
+  left: 70px;
+}
+
+
+.contact-box {
+  float: left;
+  width: 400px; /* adjust width as needed */
+  height: 100px; /* adjust height as needed */
+  margin-right: 10px; /* adjust margin as needed */
+  margin-bottom: 10px; /* adjust margin as needed */
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+
+
+/* .Kenji, .Kennedy, .Daniel, .Keenan, .Myles {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  height: 20px;
+  text-align: center;
+} */
+
+
+
+/* Login page CSS */
+.login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 200px;
+  height: 500px;
+  text-align: center;
+}
+
+.login-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.login-btn {
+  margin-top: 20px;
+  padding: 10px 15px;
+  background-color: #3f51b5;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+}
+
+.login-inputs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  max-width: 500px;
+}
