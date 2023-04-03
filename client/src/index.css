@@ -86,7 +86,7 @@ nav {
   
 }
 
-a.home-link, a.login-link, a.contact-link {
+a.home-link, a.login-link, a.contact-link, a.signup-link {
   color: rgb(255, 254, 254);
   font-family: monospace;
   text-decoration: none;
