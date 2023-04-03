@@ -18,30 +18,15 @@ const Contact = () => {
                         <a href="https://github.com/kennedyisn">GitHub</a>
                     </div>
                 </div>
-                <div className="Daniel contact-box">
-                    Daniel Gregoire
+                <div className="Branden contact-box">
+                    Branden Wheat
                     <div>
-                        <a href="mailto:danielgregoire34@gmail.com">Email</a>
+                        <a href="mailto:branden.wheat@yahoo.com">Email</a>
                         <br></br>
-                        <a href="https://github.com/danielgregoire34">GitHub</a>
+                        <a href="https://github.com/boy-son">GitHub</a>
                     </div>
                 </div>
-                <div className="Keenan contact-box">
-                    Keenan Goode
-                    <div>
-                        <a href="mailto:chasegoode7@gmail.com">Email</a>
-                        <br></br>
-                        <a href="https://github.com/flayouth">GitHub</a>
-                    </div>
-                </div>
-                <div className="Myles contact-box">
-                    Myles Nichols
-                    <div>
-                        <a href="mailto:mylesnichols21@yahoo.com">Email</a>
-                        <br></br>
-                        <a href="https://github.com/MylesNichols">GitHub</a>
-                    </div>
-                </div>
+                
             </div>
     )
     }

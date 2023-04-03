@@ -19,19 +19,21 @@ code {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  background-size: cover;
+  border-style: none;
 }
+
 
 .main-content {
   width: 100%;
   display: flex;
   height: 600px;
-  margin-top: -250px;
 }
 
 .box {
   flex: 1;
   padding: 20px;
-  border: 1px solid black;
+  border: none;
   margin: 10px;
 
 }
@@ -40,33 +42,42 @@ code {
   font-size: 48px;
   font-weight: bold;
   margin-bottom: 20px;
-  color: #1c2237;
+  color: black;
+  background-color: black;
 }
 
 .description {
   font-size: 24px;
   margin-bottom: 40px;
-  color: #58616f;
+  color: black;
+  background-color: black;
 }
 
 .signup-btn {
-  background-color: #0984e3;
+  background-color: black;
   color: #fff;
   font-size: 18px;
-  padding: 12px 24px;
+  padding: 20px 40px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
+  position:relative;
+  left: 45.8%;
+  bottom: -50px;
+  height: 60px;
+  width: 200px;
+  text-decoration: none;
+  font-weight: 500;
 }
 
 .signup-btn:hover {
-  background-color: #74b9ff;
+  background-color: darkgrey;
 }
 
 /* Navbar CSS */
 nav {
-  background-color: #0984e3;
+  background-color: #0c0d0efb;
   height: 75px; /* reduce the height of the navbar */
   width: 100%; /* make the width of the navbar 100% of the page */
   position: fixed; /* make the navbar fixed so that it stays on top */
@@ -76,7 +87,9 @@ nav {
 }
 
 a.home-link, a.login-link, a.contact-link {
-  color: black;
+  color: rgb(255, 254, 254);
+  font-family: monospace;
+  text-decoration: none;
 
 }
 
@@ -92,7 +105,7 @@ nav {
 
 nav a {
   font-size: 22px;
-  color: #4d4d4e;
+  color: #f1f1ff;
   display: inline-block; /* change display to inline-block */
   line-height: 90px; /* change line-height to match the height of the navbar */
   padding: 0 20px; 
@@ -105,7 +118,7 @@ nav a i {
 }
 
 a:hover {
-  color: rgb(221, 221, 212);
+  color: rgb(234, 234, 18);
 }
 
 
@@ -119,8 +132,8 @@ nav a:hover:after {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 200px;
-  height: 500px;
+  margin-top: 0px;
+  min-height: 100%;
   text-align: center;
 }
 
@@ -131,6 +144,10 @@ nav a:hover:after {
   width: 100%;
   max-width: 500px;
   
+}
+
+.card-header {
+  color: white;
 }
 
 .form-inputs {
@@ -155,10 +172,11 @@ input {
 }
 
 .btn {
+  color: #021534;
   margin-top: 20px;
   padding: 10px 15px;
-  background-color: #3f51b5;
-  color: #fff;
+  background-color: #021534;
+  color: rgb(237, 237, 237);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -167,29 +185,72 @@ input {
 
 /* Contact Info CSS */
 .contact-container {
-  background-color: white;
-  left: 70px;
-}
-
-
-.contact-box {
-  float: left;
-  width: 400px; /* adjust width as needed */
-  height: 100px; /* adjust height as needed */
-  margin-right: 10px; /* adjust margin as needed */
-  margin-bottom: 10px; /* adjust margin as needed */
-  border: 1px solid #ccc;
-  padding: 10px;
-}
-
-
-/* .Kenji, .Kennedy, .Daniel, .Keenan, .Myles {
   display: flex;
   flex-direction: column;
-  margin-top: 50px;
-  height: 20px;
-  text-align: center;
-} */
+  align-items: center;
+  padding: 50px;
+  background-size: cover;
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: monospace;
+  margin-top: 0px;
+  
+}
+
+
+.contact-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+  color: white;
+}
+
+.contact-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  padding: 30px;
+  margin-bottom: 30px;
+  background-color: #f5f5f5c3;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  color: rgba(7, 7, 6, 0.668);
+}
+
+.contact-box p {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+.contact-box a {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: #475c7d;
+  margin-top: 10px;
+  transition: color 0.2s ease-in-out;
+  display: inline-block;
+}
+
+.contact-box a:hover {
+  text-decoration: underline;
+  color: #1c2237;
+}
+.contact-box div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-box div a {
+  margin: 0 10px;
+}
+
+
+
+
 
 
 
@@ -198,8 +259,8 @@ input {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 200px;
-  height: 500px;
+  margin-top: 0px;
+  min-height: 100%;
   text-align: center;
 }
 
@@ -219,7 +280,7 @@ input {
   max-width: 500px;
   margin-top: 20px;
   padding: 20px;
-  border: 1px solid #ccc;
+  border: none;
   border-radius: 5px;
 }
 
@@ -240,4 +301,130 @@ input {
   align-items: center;
   width: 200px;
   max-width: 500px;
+}
+
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #f1f1ff;
+  font-family: monospace;
+  text-align: center;
+}
+
+.description {
+  font-size: 1.2rem;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  color: #f1f1ff;
+  font-family: monospace;
+  text-align: center;
+}
+
+/* Profile page CSS */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  justify-content: center;
+}
+
+.finance-section {
+  max-width: 600px;
+  margin: 0 auto;
+  background-color: #f8f8f8;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+  margin-top: 20%;
+  min-height: 100%;
+}
+
+.finance-input-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+
+}
+
+.finance-input-group label {
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.finance-input-group input,
+.finance-input-group div {
+  flex-grow: 1;
+}
+
+button {
+  background-color: #066195;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #005a88;
+}
+
+.my-trades-container {
+  margin-top: 20px;
+}
+
+.my-trades-container h2 {
+  margin-bottom: 15px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  text-align: left;
+  padding: 8px;
+  border: 1px solid #ccc;
+
+}
+
+table thead {
+  background-color: #0068a5;
+  color: #fff;
+}
+
+table tbody tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+.stock-price-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff66;
+  border: 1px solid #ccc;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+
+
+.total-value-box {
+   display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff66;
+  border: 1px solid #ccc;
+  width: 50px;
+  height: 50px;
+  border-radius: 5px;
+  font-weight: bold;
 }
