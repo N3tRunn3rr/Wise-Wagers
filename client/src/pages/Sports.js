@@ -6,17 +6,7 @@ const SportsBetting = () => {
   const sportsAPIKey = "8b80cb19e317c4b97ba6b368e1d88304";
   const navigate = useNavigate();
   const [sportsLeagues, setSportsLeagues] = useState([
-    {
-      name: "Select a League and select a type of bet to see the odds and scores!",
-      id: "sample choice",
-      value: "sample choice",
-    },
-    {
-      name: "American Football (NFL)",
-      id: "americanfootball_nfl",
-      value: "americanfootball_nfl",
-    },
-    
+  
     {
       name: 'Select a League and select a type of bet to see the odds and scores!',
       id: 'sample choice',
@@ -85,7 +75,7 @@ const SportsBetting = () => {
     console.log(selectedValue);
     if (selectedValue === "Sports") {
       console.log("sports chosen");
-      nbaScoresInfoBoard();
+      // nbaScoresInfoBoard();
       displaySportsBetCard();
     } else if (selectedValue === "Finance") {
       console.log("finance chosen");
@@ -102,22 +92,22 @@ const SportsBetting = () => {
   };
   
 
-  const nbaScoresInfoBoard = () => {
-    const nbascoresURL = `https://api.the-odds-api.com/v4/sports/basketball_nba/scores/?daysFrom=2&apiKey=${sportsAPIKey}`;
+  // const nbaScoresInfoBoard = () => {
+  //   const nbascoresURL = `https://api.the-odds-api.com/v4/sports/basketball_nba/scores/?daysFrom=2&apiKey=${sportsAPIKey}`;
 
-    fetch(nbascoresURL)
-  .then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-    const sampleScores = data;
-    console.log(sampleScores);
-    starterSportsDisplay(sampleScores);
-    return sampleScores;
-  })
-  .catch((error) => {
-    console.error(error);
-  });
-  };
+  //   fetch(nbascoresURL)
+  // .then((response) => response.json())
+  // .then((data) => {
+  //   console.log(data);
+  //   const sampleScores = data;
+  //   console.log(sampleScores);
+  //   starterSportsDisplay(sampleScores);
+  //   return sampleScores;
+  // })
+  // .catch((error) => {
+  //   console.error(error);
+  // });
+  // };
 
   const starterSportsDisplay = (sampleScores) => {
     let scoresContainer = document.querySelector("#infoBoard");
@@ -193,21 +183,19 @@ const SportsBetting = () => {
 
   //pulls info for updated scores for the selected sport
   const updatedapiInfo = (selectedValue) => {
-    var updatedSport = selectedValue;
-    console.log(updatedSport);
-    if (updatedSport === 'sample choice') {
+    console.log(selectedValue);
+    if (selectedValue === 'sample choice') {
       console.log('no sport chosen');
     } else {
-      console.log(updatedSport + ' chosen');
-      var newscoresURL = `https://api.the-odds-api.com/v4/sports/${updatedSport}/scores/?daysFrom=2&apiKey=${sportsAPIKey}`;
-      fetch(newscoresURL)
+      console.log(selectedValue + ' chosen');
+      var updatedScoresURL = `https://api.the-odds-api.com/v4/sports/${selectedValue}/scores/?daysFrom=2&apiKey=${sportsAPIKey}`;
+      fetch(updatedScoresURL)
         .then((response) => response.json())
         .then((data) => {
           console.log(data);
           var updatedScores = data;
           console.log(updatedScores);
           updatedOddsDisplay(updatedScores);
-          getCurrentSportsOdds(updatedScores);
         });
     }
   }
@@ -218,16 +206,30 @@ const SportsBetting = () => {
     updatedScoresContainer.innerHTML = '';
   
     for (var i = 0; i < updatedScores.length; i++) {
-      let updatedScore = document.createElement('div');
-      updatedScore.classList.add('card-item');
-      let newScores = document.createElement('p');
-      newScores.textContent = `${updatedScores[i].scores[0].name}: ${updatedScores[i].scores[0].score}, ${updatedScores[i].scores[1].name}: ${updatedScores[i].scores[1].score}`;
-      let updatedTeamsBanner = document.createElement('h3');
-      updatedTeamsBanner.textContent = `${updatedScores[i].home_team} vs. ${updatedScores[i].away_team}`;
-
-      updatedScore.appendChild(updatedTeamsBanner);
-      updatedScore.appendChild(newScores);
-      updatedScoresContainer.append(updatedScore);
+      let score = updatedScores[i];
+      if (score && score.scores && score.scores.length === 2 && score.scores[0].score !== null && score.scores[1].score !== null)  {
+        let updatedScore = document.createElement('div');
+        updatedScore.classList.add('card-item');
+        let newScores = document.createElement('p');
+        newScores.textContent = `${score.scores[0].name}: ${score.scores[0].score}, ${score.scores[1].name}: ${score.scores[1].score}`;
+        let updatedTeamsBanner = document.createElement('h3');
+        updatedTeamsBanner.textContent = `${score.home_team} vs. ${score.away_team}`;
+  
+        updatedScore.appendChild(updatedTeamsBanner);
+        updatedScore.appendChild(newScores);
+        updatedScoresContainer.append(updatedScore);
+      } else {
+        let noScore = document.createElement('div');
+        noScore.classList.add('card-item');
+        let noScores = document.createElement('p');
+        noScores.textContent = `Scores for ${score.home_team} vs. ${score.away_team} have not been updated yet.`;
+        let noScoreBanner = document.createElement('h3');
+        noScoreBanner.textContent = `${score.home_team} vs. ${score.away_team}`;
+  
+        noScore.appendChild(noScoreBanner);
+        noScore.appendChild(noScores);
+        updatedScoresContainer.append(noScore);
+      }
     }
   }
   
@@ -284,7 +286,7 @@ const SportsBetting = () => {
   //gets current odds for the selected sport
   const getCurrentSportsOdds = () => {
   var selectedSport = document.querySelector('#sportselector').value;
-  console.log ("selected sport is" + selectedSport);
+  console.log ("selected sport is " + selectedSport);
   console.log('current odds button clicked')
   var oddsURL = `https://api.the-odds-api.com/v4/sports/${selectedSport}/odds?apiKey=${sportsAPIKey}&regions=us&markets=h2h%2Cspreads&dateFormat=iso&oddsFormat=american&bookmakers=bovada`;
 
@@ -346,20 +348,8 @@ const SportsBetting = () => {
     betCard.appendChild(expirationDate);
     betCard.appendChild(createdBetSubmitButton);
   
-    let oddsSelector = document.createElement('select');
-    oddsSelector.setAttribute('id', 'odds-selector');
-    oddsSelector.addEventListener('change', () => {
-      const selectedBet = oddsSelector.value;
-      console.log('Selected league value:', selectedBet);
-    });
-    
-    for (let i = 0; i < oddsData.length; i++) { 
-      let oddsOption = document.createElement('option');
-      oddsOption.textContent = `${oddsData[i].home_team}: ${oddsData[i].bookmakers[i].markets[0].outcomes[0].price}, ${oddsData[i].away_team}: ${oddsData[i].bookmakers[0].markets[0].outcomes[1].price}`;
-      oddsSelector.appendChild(oddsOption);
-      console.log(oddsOption)
-    }
-    
+    let oddsSelector = createOddsSelector(oddsData);
+
     betCard.appendChild(oddsSelector);
   }
   
@@ -371,12 +361,15 @@ const SportsBetting = () => {
       console.log('Selected league value:', selectedBet);
     });
   
-    for (let i = 0; i < sportsLeagues.length; i++) { 
+    for (let i = 0; i < oddsData.length; i++) { 
       const oddsOption = document.createElement('option');
-      const homeTeamOdds = oddsData[i].bookmakers[0].markets[0].outcomes[0].price;
-      const awayTeamOdds = oddsData[i].bookmakers[0].markets[0].outcomes[1].price;
-      oddsOption.textContent = `${oddsData[i].home_team}: ${homeTeamOdds}, ${oddsData[i].away_team}: ${awayTeamOdds}`;
-      oddsSelector.appendChild(oddsOption);
+      const sites = oddsData[i].sites;
+      for (let j = 0; j < sites.length; j++) {
+        const homeTeamOdds = sites[j].odds.h2h[0];
+        const awayTeamOdds = sites[j].odds.h2h[1];
+        oddsOption.textContent = `${oddsData[i].home_team}: ${homeTeamOdds}, ${oddsData[i].away_team}: ${awayTeamOdds}`;
+        oddsSelector.appendChild(oddsOption);
+      }
     }
   
     return oddsSelector;
